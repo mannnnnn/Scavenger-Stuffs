@@ -2,12 +2,13 @@
 using UnityEngine.UI;
 using System;
 using System.Collections;
-using System.IO.Ports;
+//using System.IO.Ports;
 using System.Threading;
 public class bluetoothReader : MonoBehaviour
 {
     //taken from http://justkiel.com/2015/09/08/supporting-bluetooth-devices-in-unity-2/
-    private SerialPort serialPort = null;
+
+    /*private SerialPort serialPort = null;
     String portName = "COM1"; // ** Example BT device specs **
     int baudRate = 115200;
     int readTimeOut = 100;
@@ -77,5 +78,5 @@ public class bluetoothReader : MonoBehaviour
         programActive = false;
         if (serialPort != null && serialPort.IsOpen)
             serialPort.Close();
-    }
+    }*/
 }
