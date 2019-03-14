@@ -13,7 +13,7 @@ public class AnimaInfo : MonoBehaviour {
 	void Start () {
         //find the prefab for the starting anima and load it in
         loadedAnima = (GameObject)Resources.Load("Prefabs/" + animaName, typeof(GameObject));
-        readyAnima = Instantiate(loadedAnima, new Vector3(0, 2, -1), Quaternion.identity);
+        readyAnima = Instantiate(loadedAnima, new Vector3(0, 1.4f, -1), Quaternion.identity);
         readyAnima.transform.parent = animaHolder.transform;
         if (loadedAnima == null)
         {
