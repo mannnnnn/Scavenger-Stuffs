@@ -39,5 +39,12 @@ public class btnScript : MonoBehaviour {
     {
         advButton.SetActive(false);
         advBox.SetActive(true);
+        GetComponent<AnimaInfo>().adventuring = true;
+    }
+
+    public void endAdventure()
+    {
+        advButton.SetActive(true);
+        advBox.SetActive(false);
     }
 }
