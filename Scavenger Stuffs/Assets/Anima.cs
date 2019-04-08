@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Anima
 {
-	public int _id;
+	//public int _id;
     public string username;
     public string animaname;
 }
