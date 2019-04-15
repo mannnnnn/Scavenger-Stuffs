@@ -14,6 +14,7 @@ public class GameSparksPieces : MonoBehaviour {
 	bool registering = true;
 	public string showuser;
 	public string showpass;
+	int chance = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -31,13 +32,10 @@ public class GameSparksPieces : MonoBehaviour {
 	
 	void Update(){
 		
-		if(controller!=null){
-			getAnimas(storedUser);
-		}
-		
 		if(controller == null && GameObject.FindGameObjectsWithTag("GameController").Length>0){
 			controller = GameObject.FindGameObjectsWithTag("GameController")[0];
 			Debug.Log("Found the ram controller!");
+			getAnimas(storedUser);
 		}
 	}
 
@@ -119,25 +117,25 @@ public class GameSparksPieces : MonoBehaviour {
 	
 	public void getAnimas(string username){
 			//a list if animas the user owns, or a check if one exists
-			new GameSparks.Api.Requests.LogEventRequest().SetEventKey("getAnimas")
-			.SetEventAttribute("username", username)
-			.Send((response) => {
-					if (!response.HasErrors) {
-						var allAnimas = response.ScriptData.GetGSDataList("collectedAnimas");
-						Debug.Log(allAnimas.Count + " Animas found for this user.");
-						/*for(int i = 0; i < allAnimas.Count; i++)
-							{
+					new GameSparks.Api.Requests.LogEventRequest().SetEventKey("getAnimas")
+				.SetEventAttribute("username", username)
+				.Send((response) => {
+						if (!response.HasErrors) {
+							var allAnimas = response.ScriptData.GetGSDataList("collectedAnimas");
+							Debug.Log(allAnimas.Count + " Animas found for this user.");
+							for(int i = 0; i < allAnimas.Count; i++)
+								{
 
-								Anima newAni = JsonUtility.FromJson<Anima>(allAnimas[i].JSON);
-								Debug.Log(newAni.animaname);
-								controller.GetComponent<UserInfo>().unlockedAnima[i] = newAni.animaname;
-								
-							}*/
-					} else {
-						Debug.Log("Could not get animas!");
-						Debug.Log(response.Errors.ToString());
-					}
-			});	
-	}
+									Anima newAni = JsonUtility.FromJson<Anima>(allAnimas[i].JSON);
+									Debug.Log(newAni.animaname);
+									controller.GetComponent<UserInfo>().unlockedAnima.Add(newAni.animaname);
+									
+								}
+						} else {
+							Debug.Log("Could not get animas!");
+							Debug.Log(response.Errors.ToString());
+						}
+				});	
+			}
 }
 

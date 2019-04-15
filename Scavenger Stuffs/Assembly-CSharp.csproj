@@ -109,6 +109,7 @@
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleInsideMask.shader" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleOutsideMask.shader" />
      <None Include="Assets\Anima2D\Version.txt" />
+     <None Include="Assets\comeonandSLAMandwelcometotheJAMyouEAVESDROPPER.txt" />
      <None Include="Assets\GameSparks\README.txt" />
      <None Include="Assets\Anima2D\Examples\Shaders\Unlit-Alpha-Cull-off.shader" />
      <None Include="Assets\Anima2D\Licenses.txt" />

@@ -46,6 +46,14 @@ public class AnimaInfo : MonoBehaviour {
         }
 	}
 
+    public void reloadAnima(){
+        animaName = GetComponent<UserInfo>().currAnima;
+        loadedAnima = (GameObject)Resources.Load("Prefabs/" + animaName, typeof(GameObject));
+        readyAnima = Instantiate(loadedAnima, new Vector3(0, 1.4f, -1), Quaternion.identity);
+        Destroy(animaHolder.transform.GetChild(0).gameObject);
+        readyAnima.transform.parent = animaHolder.transform;
+    }
+
     public void adventureEvent(int hour, int min){
         if(!adventuring){
             return;
