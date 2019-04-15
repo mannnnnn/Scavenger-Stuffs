@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class GameSparksPieces : MonoBehaviour {
 	GameObject controller;
-	public string storedUser = "";
+	public string storedUser = "villian";
 	bool registering = true;
 
 	// Use this for initialization

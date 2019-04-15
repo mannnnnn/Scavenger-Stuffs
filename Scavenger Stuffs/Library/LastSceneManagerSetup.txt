@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/LoginRegisterScreen.unity
+- path: Assets/Scenes/dummyPi.unity
   isLoaded: 1
   isActive: 1
