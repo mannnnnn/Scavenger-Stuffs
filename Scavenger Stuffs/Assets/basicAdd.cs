@@ -13,20 +13,27 @@ public class basicAdd : MonoBehaviour {
     string oldText = "";
     public List<string> users = new List<string>();
     public List<string> animas = new List<string>();
-    string path = "\\home\\pi\\userAnimas.txt";
+    public Text currUser;
+    public Text currAnima;
+    string path = "C:\\Users\\Savannah\\AppData\\Local\\lxss\\rootfs\\tmp\\userAnimas.txt";
 
 	// Use this for initialization
 	void Start () {
         //login the admin
-       
             //Read the text from directly from the test.txt file
             StreamReader reader = new StreamReader(path); 
             
             while(!reader.EndOfStream){
                 string thisLine = reader.ReadLine();
                 oldText += thisLine;
-                users.Add(thisLine.Substring(0,thisLine.IndexOf(",")));
-                animas.Add(thisLine.Substring(thisLine.IndexOf(",")+1));
+                string tempStore = thisLine.Substring(0,thisLine.IndexOf(","));
+                tempStore.Replace(" ", string.Empty);
+                users.Add(tempStore);
+                currUser.text = tempStore;
+                Debug.Log("The temp store is:" + tempStore);
+                string anotherTemp = thisLine.Substring(thisLine.IndexOf(",")+1);
+                currAnima.text = anotherTemp;
+                animas.Add(anotherTemp);
             }
             
             reader.Close();
@@ -68,6 +75,8 @@ public class basicAdd : MonoBehaviour {
                 if(!users.Contains(newUser) && !users.Contains(newAnima)){
                     users.Add(newUser);
                     animas.Add(newAnima);
+                    currUser.text = newUser;
+                    currAnima.text = newAnima;
                     addAnima(newUser, newAnima);
                 }
             }
