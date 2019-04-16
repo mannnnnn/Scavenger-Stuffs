@@ -63,7 +63,7 @@ public class GameSparksPieces : MonoBehaviour {
 					string userId = response.UserId;
 					Debug.Log(userId + " was logged in");
 					storedUser = usernameHere;
-					SceneManager.LoadScene(0);
+					SceneManager.LoadScene(1);
 					} else {
 						Debug.Log("Something went wrong.");
 						//GameObject.Find("errorPanel").GetComponent<CanvasGroup>().alpha = 1f;
@@ -88,7 +88,7 @@ public class GameSparksPieces : MonoBehaviour {
 					storedUser = userId;
 					Debug.Log(userId + " was registered");
 					storedUser = usernameHere;
-					SceneManager.LoadScene(0);
+					SceneManager.LoadScene(1);
 				} else {
 					Debug.Log(response.Errors);
 					Debug.Log("Something went wrong.");
