@@ -30,10 +30,12 @@ public class basicAdd : MonoBehaviour {
                 string tempStore = thisLine.Substring(0,thisLine.IndexOf(","));
                 tempStore.Replace(" ", string.Empty);
                 tempStore = Regex.Replace(tempStore, @"[^A-Za-z0-9]+", "");
+                tempStore = tempStore.Trim();
                 users.Add(tempStore);
                 currUser.text = tempStore;
                 Debug.Log("The temp store is:" + tempStore);
                 string anotherTemp = thisLine.Substring(thisLine.IndexOf(",")+1);
+                anotherTemp = anotherTemp.Trim();
                 currAnima.text = anotherTemp;
                 animas.Add(anotherTemp);
             }
@@ -75,6 +77,9 @@ public class basicAdd : MonoBehaviour {
                 string newUser = thisLine.Substring(0,thisLine.IndexOf(","));
                 newUser = Regex.Replace(newUser, @"[^A-Za-z0-9]+", "");
                 string newAnima = thisLine.Substring(thisLine.IndexOf(",")+1);
+                newAnima = Regex.Replace(newAnima, @"[^A-Za-z0-9]+", "");
+                newUser = newUser.Trim();
+                newAnima = newAnima.Trim();
                 if(!users.Contains(newUser) && !users.Contains(newAnima)){
                     users.Add(newUser);
                     animas.Add(newAnima);
