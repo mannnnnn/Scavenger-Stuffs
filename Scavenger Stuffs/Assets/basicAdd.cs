@@ -27,9 +27,8 @@ public class basicAdd : MonoBehaviour {
             while(!reader.EndOfStream){
                 string thisLine = reader.ReadLine();
                 oldText += thisLine;
+                if(thisLine.IndexOf(",") >= 0){
                 string tempStore = thisLine.Substring(0,thisLine.IndexOf(","));
-                tempStore.Replace(" ", string.Empty);
-                tempStore = Regex.Replace(tempStore, @"[^A-Za-z0-9]+", "");
                 tempStore = tempStore.Trim();
                 users.Add(tempStore);
                 currUser.text = tempStore;
@@ -38,6 +37,7 @@ public class basicAdd : MonoBehaviour {
                 anotherTemp = anotherTemp.Trim();
                 currAnima.text = anotherTemp;
                 animas.Add(anotherTemp);
+                }
             }
             
             reader.Close();
@@ -74,19 +74,28 @@ public class basicAdd : MonoBehaviour {
             while(!reader.EndOfStream){
                 string thisLine = reader.ReadLine();
                 oldText += thisLine;
-                string newUser = thisLine.Substring(0,thisLine.IndexOf(","));
-                newUser = Regex.Replace(newUser, @"[^A-Za-z0-9]+", "");
-                string newAnima = thisLine.Substring(thisLine.IndexOf(",")+1);
-                newAnima = Regex.Replace(newAnima, @"[^A-Za-z0-9]+", "");
-                newUser = newUser.Trim();
-                newAnima = newAnima.Trim();
-                if(!users.Contains(newUser) && !users.Contains(newAnima)){
-                    users.Add(newUser);
-                    animas.Add(newAnima);
-                    currUser.text = newUser;
-                    currAnima.text = newAnima;
-                    addAnima(newUser, newAnima);
+                if(thisLine.IndexOf(",") >= 0){
+                    string newUser = thisLine.Substring(0,thisLine.IndexOf(","));
+                    string newAnima = thisLine.Substring(thisLine.IndexOf(",")+1);
+                    Debug.Log("Start trim.");
+                    if(newUser != null && newAnima != null){
+                        newUser = newUser.Trim();
+                        newAnima = newAnima.Trim();
+                    }
+                    if(!users.Contains(newUser) && !users.Contains(newAnima)){
+                        Debug.Log(newUser + " added.");
+                        Debug.Log(newAnima + " added.");
+                        users.Add(newUser);
+                        animas.Add(newAnima);
+                        currUser.text = newUser;
+                        currAnima.text = newAnima;
+                        addAnima(newUser, newAnima);
+                    }
+                    
                 }
+               
+                
+                
             }
             oldText = newText;
         }
