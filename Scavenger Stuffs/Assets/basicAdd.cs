@@ -8,6 +8,7 @@ using GameSparks.Api.Requests;
 using GameSparks.Api.Responses;
 using UnityEngine.SceneManagement;
 using System.IO;
+using System.Text.RegularExpressions;
 
 public class basicAdd : MonoBehaviour {
     string oldText = "";
@@ -28,6 +29,7 @@ public class basicAdd : MonoBehaviour {
                 oldText += thisLine;
                 string tempStore = thisLine.Substring(0,thisLine.IndexOf(","));
                 tempStore.Replace(" ", string.Empty);
+                tempStore = Regex.Replace(tempStore, @"[^A-Za-z0-9]+", "");
                 users.Add(tempStore);
                 currUser.text = tempStore;
                 Debug.Log("The temp store is:" + tempStore);
@@ -71,6 +73,7 @@ public class basicAdd : MonoBehaviour {
                 string thisLine = reader.ReadLine();
                 oldText += thisLine;
                 string newUser = thisLine.Substring(0,thisLine.IndexOf(","));
+                newUser = Regex.Replace(newUser, @"[^A-Za-z0-9]+", "");
                 string newAnima = thisLine.Substring(thisLine.IndexOf(",")+1);
                 if(!users.Contains(newUser) && !users.Contains(newAnima)){
                     users.Add(newUser);
