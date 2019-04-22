@@ -9,22 +9,18 @@ using GameSparks.Api.Responses;
 using UnityEngine.SceneManagement;
 
 public class GameSparksPieces : MonoBehaviour {
-	GameObject controller;
 	public string storedUser = "villian";
-	bool registering = true;
+	bool registering = false;
 
 	// Use this for initialization
 	void Start () {
-		//controller = GameObject.FindGameObjectsWithTag("GameController")[0];
-		if(controller == null){
-			Debug.Log("This scene does not contain a ram controller");
-		}
+		finalizeLoginOrRegister();
 	}
 	
 	public void finalizeLoginOrRegister(){
 		//move to main
-		string usernameHere = GameObject.Find("usernameText").GetComponent<Text>().text;
-		string passwordHere = GameObject.Find("passwordText").GetComponent<Text>().text;
+		string usernameHere = "savvy";
+		string passwordHere = "mann";
 
 		if(usernameHere != null && passwordHere != null){
 			if(!registering){
@@ -42,7 +38,6 @@ public class GameSparksPieces : MonoBehaviour {
 					AuthenticationResponse._Player switchSummary = response.SwitchSummary;
 					string userId = response.UserId;
 					Debug.Log(userId + " was logged in");
-					SceneManager.LoadScene(0);
 					} else {
 						Debug.Log("Something went wrong.");
 						GameObject.Find("errorPanel").GetComponent<CanvasGroup>().alpha = 1f;
@@ -66,7 +61,6 @@ public class GameSparksPieces : MonoBehaviour {
 					string userId = response.UserId;
 					storedUser = userId;
 					Debug.Log(userId + " was registered");
-					SceneManager.LoadScene(0);
 				} else {
 					Debug.Log(response.Errors);
 					Debug.Log("Something went wrong.");
