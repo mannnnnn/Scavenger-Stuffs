@@ -42,10 +42,10 @@ public class GameSparksPieces : MonoBehaviour {
 	public void finalizeLoginOrRegister(){
 		//move to main
 		string usernameHere = GameObject.Find("usernameText").GetComponent<Text>().text;
-		string passwordHere = GameObject.Find("passwordText").GetComponent<Text>().text;
+		string passwordHere = GameObject.Find("password").GetComponent<InputField>().text;
 		showuser = usernameHere;
 		showpass = passwordHere;
-		
+		Debug.Log(passwordHere);
 		if(usernameHere != null && passwordHere != null){
 			if(!registering){
 				Debug.Log("Logging-in");
