@@ -82,7 +82,7 @@ public class basicAdd : MonoBehaviour {
                         newUser = newUser.Trim();
                         newAnima = newAnima.Trim();
                     }
-                    if(!users.Contains(newUser) && !users.Contains(newAnima)){
+                    if(!users.Contains(newUser) || !animas.Contains(newAnima) || animas[users.IndexOf(newUser)] != newAnima){
                         Debug.Log(newUser + " added.");
                         Debug.Log(newAnima + " added.");
                         users.Add(newUser);
