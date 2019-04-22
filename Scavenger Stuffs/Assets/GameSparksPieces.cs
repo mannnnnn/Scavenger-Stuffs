@@ -128,7 +128,10 @@ public class GameSparksPieces : MonoBehaviour {
 
 									Anima newAni = JsonUtility.FromJson<Anima>(allAnimas[i].JSON);
 									Debug.Log(newAni.animaname);
-									controller.GetComponent<UserInfo>().unlockedAnima.Add(newAni.animaname);
+									if(!controller.GetComponent<UserInfo>().unlockedAnima.Contains(newAni.animaname)){
+										controller.GetComponent<UserInfo>().unlockedAnima.Add(newAni.animaname);
+									}
+									
 									
 								}
 						} else {
