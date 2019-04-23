@@ -617,12 +617,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1935658203}
-        m_MethodName: 
+      - m_Target: {fileID: 1935658208}
+        m_MethodName: lookForAnima
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1436,7 +1436,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1935658205}
-  - component: {fileID: 1935658204}
   - component: {fileID: 1935658206}
   - component: {fileID: 1935658207}
   - component: {fileID: 1935658208}
@@ -1448,18 +1447,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1935658204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935658203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff650c851c15cd648962d13adf3a2551, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1935658205
 Transform:
   m_ObjectHideFlags: 0
@@ -1532,6 +1519,7 @@ MonoBehaviour:
   unlockedAnima: []
   currAnima: phoebe
   animaInfo: {fileID: 0}
+  gs: {fileID: 0}
 --- !u!114 &1935658209
 MonoBehaviour:
   m_ObjectHideFlags: 0
