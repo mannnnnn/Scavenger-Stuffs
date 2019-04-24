@@ -80,9 +80,9 @@ public class AnimaInfo : MonoBehaviour {
         switch(currEnvNum){
             case(0): eventText = getHomeEvent(rand); break;
             case(1): eventText = getCaveEvent(rand); break;
-            case(2):
-            case(3):
-            case(4): break;
+            case(2): eventText = getMeadowEvent(rand); break;
+            case(3): eventText = getOrbEvent(rand); break;
+            case(4): eventText = getIceEvent(rand); break;
             default: break;
         }
         timeText.text = hour + ":" + min;
@@ -141,4 +141,30 @@ public class AnimaInfo : MonoBehaviour {
         }
     }
 
+    public string getMeadowEvent(int rand){
+        switch(rand){
+            case(0): return animaName + " stops to smell some flowers by the road.";
+            case(1): return "A small bird lands on " + animaName + "'s nose.";
+            case(2): return  animaName + " decides to poke at some rocks on the side of the road.";
+            default: return "Just a regular day at the meadow.";
+        }
+    }
+
+     public string getOrbEvent(int rand){
+        switch(rand){
+            case(0): return animaName + " feels a sense of calm as it sits here.";
+            case(1): return "Sparks of magic tickle " + animaName + "'s nose.";
+            case(2): return  animaName + " can see its reflection in the glass around it.";
+            default: return "Just a regular day by the orb.";
+        }
+    }
+
+    public string getIceEvent(int rand){
+        switch(rand){
+            case(0): return animaName + " frolics in the fresh snow.";
+            case(1): return "A flurry of snow falls onto " + animaName + ".";
+            case(2): return  animaName + " tries to run, but slips on the ice.";
+            default: return "Just a regular day on the ice.";
+        }
+    }   
 }

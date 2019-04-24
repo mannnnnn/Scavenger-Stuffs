@@ -168,7 +168,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 c7524f6d2a9246ca362a31c7bbcec536 Assembly-CSharp.dll:UnityChan.SpringBone
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:GameSparks.Platforms.WebSocketController
 924a22e2fa5027638ab7f67f56c272c6 Assembly-CSharp.dll:.GameSparksTestUI
-fa1c83a224e04129b9cef6f73c8318b8 Assembly-CSharp.dll:.UserInfo
+6016891930fecd541bbd2be0b3956244 Assembly-CSharp.dll:.UserInfo
 a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:Anima2D.EditorUpdaterProxy

@@ -18,6 +18,7 @@ public class GameSparksPieces : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Screen.SetResolution(770, 1440, false);
 		DontDestroyOnLoad(this.gameObject);
 		//
 		if(controller == null){

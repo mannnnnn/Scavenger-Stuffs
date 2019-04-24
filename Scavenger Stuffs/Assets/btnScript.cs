@@ -47,4 +47,9 @@ public class btnScript : MonoBehaviour {
         advButton.SetActive(true);
         advBox.SetActive(false);
     }
+
+    public void exit()
+    {
+        Application.Quit();
+    }
 }
